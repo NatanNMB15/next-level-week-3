@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { FiPlus } from "react-icons/fi";
+import { Map, TileLayer } from "react-leaflet";
 
 import "leaflet/dist/leaflet.css";
 
@@ -9,6 +10,12 @@ import mapMarkerImg from "../assets/images/map-marker.svg";
 import "../styles/pages/orphanages-map.css";
 
 function OrphanagesMap() {
+  const position = {
+    lat: -25.4313241,
+    lng: -49.3030403,
+    zoom: 12.5,
+  };
+
   return (
     <div id="page-map">
       <aside>
@@ -24,16 +31,13 @@ function OrphanagesMap() {
           <span>Paraná</span>
         </footer>
       </aside>
-      <iframe
-        title="Google Maps"
-        frameBorder="0"
-        className="embed-responsive-item"
-        src={`https://www.google.com/maps/embed/v1/view?zoom=${13}&center=${-25.4319707},${-49.28586}&key=${
-          process.env.REACT_APP_MAPS_API_KEY
-        }`}
-        allowFullScreen
-        style={{ width: "100%" }}
-      ></iframe>{" "}
+      <Map
+        center={[position.lat, position.lng]}
+        zoom={position.zoom}
+        style={{ width: "100%", height: "100%" }}
+      >
+        <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
+      </Map>
       <Link to="/" className="create-orphanage">
         <FiPlus size={32} color="#FFF" />
       </Link>
