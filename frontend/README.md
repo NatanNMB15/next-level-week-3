@@ -1,7 +1,5 @@
 # Front-End Happy
 
-![ReactJS Front-End CI/CD](https://github.com/NatanNMB15/semanaomnistack11/workflows/ReactJS%20Front-End%20CI/CD/badge.svg?branch=frontend)
-
 ## 1. Instalação
 
 Necessário estar com o Node JS versão 12 instalado.
@@ -35,21 +33,3 @@ Utilizando NPM:
 ```
 npm dev
 ```
-
-## 3. Realizar a "Build" para o ambiente de produção
-
-Para executar a Build é necessário ter o arquivo ".env" com as variáveis de ambientes de produção. Execute a "Build" com o seguinte comando:
-
-Utilizando Yarn:
-
-```
-yarn build
-```
-
-Utilizando NPM:
-
-```
-npm build
-```
-
-Irá gerar uma pasta "build" com os arquivos estáticos do Site.
